@@ -79,6 +79,52 @@
             .section-title { font-size: 36px; }
             .photo-grid { grid-template-columns: 1fr; }
         }
+
+        /* Lightbox */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .lightbox-overlay.active { display: flex; }
+        .lightbox-content {
+            max-width: 75vw;
+            max-height: 75vh;
+            position: relative;
+            cursor: default;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-weight: 700;
+            transition: opacity 0.3s;
+        }
+        .lightbox-close:hover { opacity: 0.7; }
+        .lightbox-caption {
+            text-align: center;
+            color: white;
+            margin-top: 16px;
+            font-size: 18px;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -97,43 +143,43 @@
             <h2 class="photo-title">📸 兆軒的九州轎子遊</h2>
             <div class="photo-grid">
                 <div class="photo-card">
-                    <img src="img_eacaa970ac64.png" alt="火山口轎子遊玩 ROG Ally">
+                    <img src="img_eacaa970ac64.png" alt="火山口轎子遊玩 ROG Ally" onclick="openLightbox(this.src, '🌋 火山口旁・三人抬轎、ROG Ally 電競時光')" style="cursor:pointer;">
                     <div class="photo-caption">🌋 火山口旁・三人抬轎、ROG Ally 電競時光</div>
                 </div>
                 <div class="photo-card">
-                    <img src="img_887b89c9dc36.jpg" alt="別府海地獄溫泉">
+                    <img src="img_887b89c9dc36.jpg" alt="別府海地獄溫泉" onclick="openLightbox(this.src, '♨️ 別府海地獄・溫泉蒸氣旁坐轎遊')" style="cursor:pointer;">
                     <div class="photo-caption">♨️ 別府海地獄・溫泉蒸氣旁坐轎遊</div>
                 </div>
                 <div class="photo-card">
-                    <img src="img_a9b6086d3167.jpg" alt="神社參道轎子">
+                    <img src="img_a9b6086d3167.jpg" alt="神社參道轎子" onclick="openLightbox(this.src, '⛩️ 神社鳥居石階・傳統轎子現代遊')" style="cursor:pointer;">
                     <div class="photo-caption">⛩️ 神社鳥居石階・傳統轎子現代遊</div>
                 </div>
                 <div class="photo-card">
-                    <img src="img_d3d18dd392b1.jpg" alt="LaLaport 購物中心轎遊">
+                    <img src="img_d3d18dd392b1.jpg" alt="LaLaport 購物中心轎遊" onclick="openLightbox(this.src, '🛒 LaLaport 購物中心・轎子逛商場專人推貨')" style="cursor:pointer;">
                     <div class="photo-caption">🛒 LaLaport 購物中心・轎子逛商場專人推貨</div>
                 </div>
                 <div class="photo-card">
-                    <img src="img_3861fadb1344.jpg" alt="日式餐廳用餐">
+                    <img src="img_3861fadb1344.jpg" alt="日式餐廳用餐" onclick="openLightbox(this.src, '🍱 九州美食定食・飯後 ROG Ally 連戰')" style="cursor:pointer;">
                     <div class="photo-caption">🍱 九州美食定食・飯後 ROG Ally 連戰</div>
                 </div>
                 <div class="photo-card">
-                    <img src="img_f0043db06d0e.jpg" alt="車上遊戲時光">
+                    <img src="img_f0043db06d0e.jpg" alt="車上遊戲時光" onclick="openLightbox(this.src, '🚗 九州自駕途中・車上電競不間斷')" style="cursor:pointer;">
                     <div class="photo-caption">🚗 九州自駕途中・車上電競不間斷</div>
                 </div>
                 <div class="photo-card">
-                    <img src="img_3cad6cca1c65.jpg" alt="櫻井二見之浦夫婦岩">
+                    <img src="img_3cad6cca1c65.jpg" alt="櫻井二見之浦夫婦岩" onclick="openLightbox(this.src, '🌊 櫻井二見之浦・夫婦岩前 ROG Ally 轎遊')" style="cursor:pointer;">
                     <div class="photo-caption">🌊 櫻井二見之浦・夫婦岩前 ROG Ally 轎遊</div>
                 </div>
                 <div class="photo-card">
-                    <img src="img_13c21e93b540.jpg" alt="阿蘇草千里下午茶">
+                    <img src="img_13c21e93b540.jpg" alt="阿蘇草千里下午茶" onclick="openLightbox(this.src, '🌋 阿蘇草千里・火山口旁轎上下午茶')" style="cursor:pointer;">
                     <div class="photo-caption">🌋 阿蘇草千里・火山口旁轎上下午茶</div>
                 </div>
                 <div class="photo-card">
-                    <img src="img_88d2473308b8.jpg" alt="熊本城轎子下午茶">
+                    <img src="img_88d2473308b8.jpg" alt="熊本城轎子下午茶" onclick="openLightbox(this.src, '🏯 熊本城天守閣前・轎子下午茶專人送上')" style="cursor:pointer;">
                     <div class="photo-caption">🏯 熊本城天守閣前・轎子下午茶專人送上</div>
                 </div>
                 <div class="photo-card wide">
-                    <img src="img_4bf513e269f9.jpg" alt="嬉野溫泉祐德稻荷神社">
+                    <img src="img_4bf513e269f9.jpg" alt="嬉野溫泉祐德稻荷神社" onclick="openLightbox(this.src, '♨️ 嬉野溫泉足湯轎區 + ⛩️ 祐德稻荷本殿轎上參拜')" style="cursor:pointer;">
                     <div class="photo-caption">♨️ 嬉野溫泉足湯轎區 + ⛩️ 祐德稻荷本殿轎上參拜</div>
                 </div>
             </div>
@@ -323,5 +369,33 @@
             <p class="quote">「走路？那是外人的事。」— 兆軒</p>
         </div>
     </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox">
+        <div class="lightbox-content" onclick="event.stopPropagation();">
+            <button class="lightbox-close" onclick="closeLightbox();">✕</button>
+            <img id="lightbox-img" src="" alt="">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <script>
+        function openLightbox(src, caption) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-caption').textContent = caption;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
 </body>
 </html>
