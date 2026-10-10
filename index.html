@@ -125,6 +125,17 @@
             font-size: 18px;
             font-weight: 600;
         }
+
+        /* Preparation */
+        .prep-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+        .prep-card { background: #f8f9fa; border-radius: 20px; padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .prep-card h3 { font-size: 24px; margin-bottom: 20px; color: #2c3e50; }
+        .prep-table { width: 100%; }
+        .prep-table td { padding: 8px 0; border-bottom: 1px solid #e0e0e0; }
+        .prep-table td:first-child { font-weight: 700; color: #e74c3c; width: 80px; }
+        .prep-list { list-style: none; }
+        .prep-list li { padding: 10px 0; border-bottom: 1px solid #e0e0e0; font-size: 16px; line-height: 1.6; }
+        .prep-list li:last-child { border-bottom: none; }
     </style>
 </head>
 <body>
@@ -137,8 +148,55 @@
         </div>
         <div class="scroll-indicator"></div>
     </section>
-    
-    <section class="photo-section">
+
+    <section class="preparation" style="background: white; padding: 100px 0;">
+        <div class="container">
+            <h2 class="section-title">04 行前待辦 & 注意事項</h2>
+            <p style="text-align: center; color: #7f8c8d; margin-bottom: 48px;">來源：《九州行重點提醒紀錄表單.xlsx》</p>
+            <div class="prep-grid">
+                <div class="prep-card">
+                    <h3>✈️ 機票資訊</h3>
+                    <table class="prep-table">
+                        <tr><td>去程</td><td>2/25（四）IT246・台灣時間 8:10 起飛 → 日本時間 11:15 抵達</td></tr>
+                        <tr><td>回程</td><td>3/7（日）IT247・日本時間 11:25 起飛 → 台灣時間 13:05 抵達</td></tr>
+                    </table>
+                </div>
+                <div class="prep-card">
+                    <h3>📋 待辦事項</h3>
+                    <ul class="prep-list">
+                        <li>韋廷：駕照日文譯本申請</li>
+                        <li>瀚凱：駕照日文譯本申請 / 11 天份慢性病藥物</li>
+                        <li>健廷：駕照日文譯本申請 / 緊急痛風藥物</li>
+                        <li>小夜：護照更新</li>
+                        <li>百：護照更新 / 全部人的旅遊保險 / 全部人的 eSIM</li>
+                        <li>妍：詢問租車 → 已預約，預約號 <b>00010892217 & 00010892227</b></li>
+                    </ul>
+                </div>
+                <div class="prep-card">
+                    <h3>🧳 行李箱（4 小 7 大）</h3>
+                    <ul class="prep-list">
+                        <li>每車抓 3 小 4 大，留空間給包包</li>
+                        <li>虎航手提新規定：54×38×23cm、兩件合計 ≤10kg</li>
+                        <li>2026/5/28 起全線改紙板測量箱投影法</li>
+                        <li>機場櫃檯臨時加託運費 1,600 元</li>
+                    </ul>
+                </div>
+                <div class="prep-card">
+                    <h3>📌 注意事項</h3>
+                    <ul class="prep-list">
+                        <li>出發前確認「阿蘇火山防災連絡協議會」官網火口管制級別</li>
+                        <li>全程租車佐賀機場同地取還，免跨縣還車手續費</li>
+                        <li>2/27 事先確認熊本城天守閣通路開放公告</li>
+                        <li>熊本 Airbnb：熊本市東區若葉 2-9-10 201/202 室</li>
+                        <li>太宰府導航至九州國立博物館立體停車場（約 500 日圓/次）</li>
+                        <li>3/6 佐賀城飯店：16:30 先到、停西側 40 格免費平面車位</li>
+                        <li>3/7 08:00 出發 → 佐賀機場 13.5 公里/20 分鐘</li>
+                        <li>牛もつ鍋 宗家 赤門屋：一月底提醒訂位</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
         <div class="container">
             <h2 class="photo-title">📸 兆軒的九州轎子遊</h2>
             <div class="photo-grid">
@@ -219,11 +277,13 @@
             </div>
         </div>
     </section>
-    
-    <section class="itinerary">
+
+
+
+    <section class="itinerary" style="background: linear-gradient(135deg, #f8f9fa 0%, #e8ecef 100%);">
         <div class="container">
             <h2 class="section-title">🗺️ 行程規劃</h2>
-            
+
             <div class="day-card">
                 <div class="day-header">
                     <div class="day-number">D1</div>
@@ -232,7 +292,7 @@
                 <p class="day-desc">入境首日，兆軒享受「落地即坐轎」尊榮體驗</p>
                 <div class="highlight">兆軒專享：柳川遊船（轎子直接擺上船艙，全程不沾地）</div>
             </div>
-            
+
             <div class="day-card">
                 <div class="day-header">
                     <div class="day-number">D2</div>
@@ -241,7 +301,7 @@
                 <p class="day-desc">阿蘇火山中岳火口，轎子隊上山觀景台</p>
                 <div class="highlight">兆軒專享：草千里之濱轎子巡禮，火山口旁喝下午茶</div>
             </div>
-            
+
             <div class="day-card">
                 <div class="day-header">
                     <div class="day-number">D3</div>
@@ -250,7 +310,7 @@
                 <p class="day-desc">熊本城周邊散步？不，兆軒在轎上遠眺</p>
                 <div class="highlight">兆軒專享：熊本城天守閣前轎子咖啡廳（外送上桌）</div>
             </div>
-            
+
             <div class="day-card">
                 <div class="day-header">
                     <div class="day-number">D4</div>
@@ -259,7 +319,7 @@
                 <p class="day-desc">實體鋼彈前，兆軒的轎子與鋼彈合影</p>
                 <div class="highlight">兆軒專享：LaLaport 購物專人推轎進場，商品直送轎上</div>
             </div>
-            
+
             <div class="day-card">
                 <div class="day-header">
                     <div class="day-number">D5</div>
@@ -268,7 +328,7 @@
                 <p class="day-desc">櫻井二見之浦夫婦岩，海岸線轎子巡禮</p>
                 <div class="highlight">兆軒專享：船越漁港烤牡蠣 + 海上轎子日落晚餐</div>
             </div>
-            
+
             <div class="day-card">
                 <div class="day-header">
                     <div class="day-number">D6</div>
@@ -277,7 +337,7 @@
                 <p class="day-desc">太宰府天滿宮參拜，轎子直達本殿前</p>
                 <div class="highlight">兆軒專享：彩虹電動步道 + 轎子等候區（免走一步）</div>
             </div>
-            
+
             <div class="day-card">
                 <div class="day-header">
                     <div class="day-number">D7</div>
@@ -286,7 +346,7 @@
                 <p class="day-desc">武雄市圖書館蔦屋文化，溫泉街轎子遊</p>
                 <div class="highlight">兆軒專享：武雄溫泉樓門巡禮，轎子停在每棟古湯前</div>
             </div>
-            
+
             <div class="day-card">
                 <div class="day-header">
                     <div class="day-number">D8</div>
@@ -295,7 +355,7 @@
                 <p class="day-desc">陶山神社陶瓷鳥居，有田燒直購</p>
                 <div class="highlight">兆軒專享：陶瓷工坊體驗（轎上等待區享用抹茶）</div>
             </div>
-            
+
             <div class="day-card">
                 <div class="day-header">
                     <div class="day-number">D9</div>
@@ -304,7 +364,7 @@
                 <p class="day-desc">唐津城天守閣登頂，虹之松原絕景</p>
                 <div class="highlight">兆軒專享：鏡山展望台轎子觀景台，海中餐廳萬坊包廂</div>
             </div>
-            
+
             <div class="day-card">
                 <div class="day-header">
                     <div class="day-number">D10</div>
@@ -313,7 +373,7 @@
                 <p class="day-desc">嬉野茶體驗、湯豆腐、日本三大稻荷</p>
                 <div class="highlight">兆軒專享：嬉野足湯轎子區 + 祐德稻荷本殿轎上參拜</div>
             </div>
-            
+
             <div class="day-card">
                 <div class="day-header">
                     <div class="day-number">D11</div>
@@ -324,7 +384,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="features">
         <div class="container">
             <h2 class="section-title">🏯 轎子服務特色</h2>
@@ -362,7 +422,9 @@
             </div>
         </div>
     </section>
-    
+
+
+
     <footer>
         <div class="container">
             <p>&copy; 2029 兆軒九州轎子遊｜11 人團專屬訂製</p>
